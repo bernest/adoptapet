@@ -39,6 +39,7 @@ if (!isProduction) {
 app.use(cors());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+app.get('/', (req, res) => { res.send('Welcome to AdoptaPet API'); })
 app.use('/v1', require('./routes'));
 
 // Interceptando los errores 404
