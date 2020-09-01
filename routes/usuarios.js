@@ -8,12 +8,11 @@ const {
 } = require('../controllers/usuarios')
 var auth = require('./auth');
 
-
-router.get('/', auth.required, obtenerUsuarios)
-router.get('/:id', auth.required, obtenerUsuarios);
-router.post('/', auth.optional,crearUsuario)
-router.post('/entrar', auth.optional,iniciarSesion)
-router.put('/:id', auth.required, modificarUsuario)
-router.delete('/:id', auth.required, eliminarUsuario)
+router.get('/', auth.requerido, obtenerUsuarios)
+router.get('/:id', auth.requerido, obtenerUsuarios);
+router.post('/', crearUsuario)
+router.post('/entrar', iniciarSesion)
+router.put('/:id', auth.requerido, modificarUsuario)
+router.delete('/:id', auth.requerido, eliminarUsuario)
 
 module.exports = router;
